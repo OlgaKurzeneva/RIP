@@ -12,7 +12,7 @@
 
     <servlet-mapping>
         <servlet-name>Car</servlet-name>
-        <url-pattern>/servlet</url-pattern>
+        <url-pattern>/car</url-pattern>
     </servlet-mapping>
 
 </web-app>
