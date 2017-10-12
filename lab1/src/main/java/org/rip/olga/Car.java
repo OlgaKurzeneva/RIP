@@ -16,8 +16,8 @@ public class Car extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         response.setContentType("text/html; charset=windows-1251");
-        PrintWriter out = response.getWriter();
 
+        PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE HTML>");
         out.println("<form action=\"\" method=\"GET\">");
         out.println("<p>Введите модель машины: <input type=\"text\" name=\"model\"></p>");
@@ -25,8 +25,8 @@ public class Car extends HttpServlet {
         out.println("<input type=\"submit\" value=\"Добавить\" />");
         out.println("</form>");
 
-        response.getWriter().println("<form action=\"\" method=\"POST\">");
-        out.println("<input type=\"submit\" value=\"Список внесенных сущностей\" />");
+        out.println("<form action=\"\" method=\"POST\">");
+        out.println("<input type=\"submit\" style=\"\n" + "margin-top: 30px;margin-bottom: 15px;" + "\" value=\"Список внесенных сущностей\" />");
         out.println("</form>");
 
         request.setAttribute("cars", cars);
@@ -41,20 +41,18 @@ public class Car extends HttpServlet {
 
         String model = (String) request.getParameter("model");
         String color = (String) request.getParameter("color");
-        
+
         cars.add(model);
         cars.add(color);
 
-        String car = "";
         for (int i = 0; i < cars.size(); i++) {
-            car = car + cars.get(i) + " ";
+            out.println("\n<br />");
+            if(i%2 == 0){
+                out.println("Model: " + cars.get(i) + "\n<br />");
+            } else if(i%2 != 0){
+                out.println("Color: " + cars.get(i) + "\n<br />");
+                out.println("\n<br />");
+            }
         }
-        out.println(car);
-
-        out.println("<!DOCTYPE HTML>");
-        out.println("<form action=\"\" method=\"POST\">");
-        out.println("<html><body><p>Модель:" + model + "</p></body></html>");
-        out.println("<html><body><p>Цвет:" + color + "</p></body></html>");
-        out.println("</form>");
     }
 }

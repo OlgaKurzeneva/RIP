@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:30 +0300] "POST /car?model=mini&color=blue HTTP/1.1" 200 440 http-bio-8888-exec-1 76
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:31 +0300] "POST /car?model=mini&color=blue HTTP/1.1" 200 507 http-bio-8888-exec-2 1
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:38 +0300] "GET /car?model=renault&color=red HTTP/1.1" 200 373 http-bio-8888-exec-4 15
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:38 +0300] "POST /car?model=renault&color=red HTTP/1.1" 200 576 http-bio-8888-exec-5 0
