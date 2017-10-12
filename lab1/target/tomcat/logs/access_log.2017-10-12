@@ -1,4 +1,4 @@
-0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:30 +0300] "POST /car?model=mini&color=blue HTTP/1.1" 200 440 http-bio-8888-exec-1 76
-0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:31 +0300] "POST /car?model=mini&color=blue HTTP/1.1" 200 507 http-bio-8888-exec-2 1
-0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:38 +0300] "GET /car?model=renault&color=red HTTP/1.1" 200 373 http-bio-8888-exec-4 15
-0:0:0:0:0:0:0:1 - - [12/Oct/2017:10:18:38 +0300] "POST /car?model=renault&color=red HTTP/1.1" 200 576 http-bio-8888-exec-5 0
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:23:14:50 +0300] "GET / HTTP/1.1" 200 - http-bio-8888-exec-1 1003
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:23:14:51 +0300] "GET /car HTTP/1.1" 200 437 http-bio-8888-exec-2 5
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:23:14:56 +0300] "GET /car?model=renault&color=red&price=6 HTTP/1.1" 200 437 http-bio-8888-exec-3 0
+0:0:0:0:0:0:0:1 - - [12/Oct/2017:23:14:56 +0300] "POST /car?model=renault&color=red&price=6 HTTP/1.1" 200 496 http-bio-8888-exec-4 3

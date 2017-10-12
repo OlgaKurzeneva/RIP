@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class Car extends HttpServlet {
+
     private ArrayList cars = new ArrayList();
 
     @Override
@@ -22,6 +23,8 @@ public class Car extends HttpServlet {
         out.println("<form action=\"\" method=\"GET\">");
         out.println("<p>Введите модель машины: <input type=\"text\" name=\"model\"></p>");
         out.println("<p>Введите цвет машины: <input type=\"text\" name=\"color\"></p>");
+        out.println("<p>Введите цену машины: <input type=\"number\" name=\"price\"></p>");
+
         out.println("<input type=\"submit\" value=\"Добавить\" />");
         out.println("</form>");
 
@@ -41,18 +44,22 @@ public class Car extends HttpServlet {
 
         String model = (String) request.getParameter("model");
         String color = (String) request.getParameter("color");
+        int price = Integer.parseInt(request.getParameter("price"));
 
         cars.add(model);
         cars.add(color);
+        cars.add(price);
 
-        for (int i = 0; i < cars.size(); i++) {
-            out.println("\n<br />");
-            if(i%2 == 0){
-                out.println("Model: " + cars.get(i) + "\n<br />");
-            } else if(i%2 != 0){
-                out.println("Color: " + cars.get(i) + "\n<br />");
-                out.println("\n<br />");
-            }
+        for (int i = 0; i < cars.size(); i += 3) {
+            out.println("Model: " + cars.get(i) + "\n<br />");
+        }
+
+        for (int i = 1; i < cars.size(); i += 3) {
+            out.println("Color: " + cars.get(i) + "\n<br />");
+        }
+
+        for (int i = 2; i < cars.size(); i += 3) {
+            out.println("Price: " + cars.get(i) + "\n<br />");
         }
     }
 }
